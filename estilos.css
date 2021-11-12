@@ -1,0 +1,265 @@
+html
+{ 
+    font-size: 62.5%;
+    box-sizing: border-box; 
+}
+
+*, *:before, *:after{ 
+    box-sizing: inherit;
+}
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #0F0F0F;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container
+{
+    position: relative;
+}
+
+.container .card
+{
+    position: relative;
+    width: 32rem;
+    height: 42rem;
+    overflow: hidden;
+    background-color: #1D1D1D;
+    border-radius: 2rem;
+}
+
+.container .card::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #B22424;
+    clip-path: circle(15rem at 80% 20%);
+    transition: .5s ease-in-out;
+}
+
+.container .card.background-azul::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #67D6E1;
+    clip-path: circle(15rem at 80% 20%);
+    transition: .5s ease-in-out;
+}
+
+.container .card.background-naranja::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #ED8918;
+    clip-path: circle(15rem at 80% 20%);
+    transition: .5s ease-in-out;
+}
+
+.container .card:hover::before,
+.container .card.background-azul:hover::before,
+.container .card.background-naranja:hover::before
+{
+    clip-path: circle(30rem at 80% -20%);
+}
+
+.container .card .cardimg
+{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10000;
+    width: 100%;
+    height: 22rem;
+    transition: .5s;
+}
+
+.container .card:hover .cardimg
+{
+    top: 0%;
+    transform: translateY(0);
+}
+
+.container .card .cardimg img
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-25deg);
+    width: 27rem;
+}
+
+.container .card .cardcontent
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10rem;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+
+.container .card:hover .cardcontent
+{
+    height: 21rem;
+}
+
+.container .card .cardcontent h2
+{
+    position: relative;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    color: #FFF;
+    margin: 0;
+    font-size: 4rem;
+}
+
+.container .card .cardcontent .cardsize,
+.container .card .cardcontent .cardcolor
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem 2rem;
+    transition: .5s;
+    opacity: 0;
+    visibility: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.container .card:hover .cardcontent .cardsize
+{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: .5s;
+}
+
+.container .card:hover .cardcontent .cardcolor
+{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: .6s;
+}
+
+.container .card .cardcontent .cardsize h3,
+.container .card .cardcontent .cardcolor h3
+{
+    position: relative;
+    font-size: 1.4rem;
+    color: #FFF;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    margin-right: 1rem;
+}
+
+.container .card .cardcontent .cardsize .talla
+{
+    width: 2.6rem;
+    height: 2.6rem;
+    text-align: center;
+    line-height: 2.6rem;
+    font-size: 1.4rem;
+    display: inline-block;
+    color: #111;
+    background: #FFF;
+    margin: 0 .5rem;
+    transition: .5s;
+    border-radius: .4rem;
+    cursor: pointer;
+}
+
+.container .card .cardcontent .cardsize .talla:hover
+{
+    background: #B22424;
+}
+
+.container .card .cardcontent .cardsize .talla.azul:hover
+{
+    background: #67D6E1;
+}
+
+.container .card .cardcontent .cardsize .talla.naranja:hover
+{
+    background: #ED8918;
+}
+
+.container .card .cardcontent .cardcolor span
+{
+    width: 2rem;
+    height: 2rem;
+    background: #ff0;
+    border-radius: 50%;
+    margin: 0 .5rem;
+    cursor: pointer;
+}
+
+.container .card .cardcontent .cardcolor span:nth-child(2) 
+{
+    background: #B22424;
+}
+
+.container .card .cardcontent .cardcolor span:nth-child(3)
+{
+    background: #67D6E1;
+}
+
+.container .card .cardcontent .cardcolor span:nth-child(4)
+{
+    background: #ED8918;
+}
+
+.container .card .cardcontent a
+{
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #fff;
+    border-radius: .4rem;
+    margin-top: 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    color: #111;
+    opacity: 0;
+    transform: translateY(5rem);
+    transition: .5s;
+    margin-top: 0;
+}
+
+.container .card .cardcontent a:hover
+{
+    background: #B22424;
+}
+
+.container .card .cardcontent a.azul:hover
+{
+    background: #67D6E1;
+}
+
+.container .card .cardcontent a.naranja:hover
+{
+    background: #ED8918;
+}
+
+.container .card:hover .cardcontent a
+{
+    opacity: 1;
+    transform: translateY(0);
+}
